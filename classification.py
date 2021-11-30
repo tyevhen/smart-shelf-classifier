@@ -1,3 +1,5 @@
+import requests
+from io import BytesIO
 # import mlflow
 import torch
 from torchvision import models, transforms
@@ -98,9 +100,8 @@ def transform_reshape_image(img):
 
 
 def load_image(url):
-    # TODO implement load_image_by_url()
-    # image_raw = load_img_by_url()
-    img_raw = Image.open(url)
+    response = requests.get(url)
+    img_raw = Image.open(BytesIO(response.content))
     return img_raw
 
 # images = ['sample_images/dagelsvviw.jpg', 'sample_images/yqggboetfh.jpg']
