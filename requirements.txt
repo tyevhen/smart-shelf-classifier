@@ -1,7 +1,7 @@
 alembic==1.4.1
 certifi==2021.10.8
 charset-normalizer==2.0.8
-click==7
+click==7.1.2
 cloudpickle==2.0.0
 databricks-cli==0.16.2
 dataclasses==0.6
