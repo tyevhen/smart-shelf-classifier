@@ -1,4 +1,4 @@
-import mlflow
+# import mlflow
 import torch
 from torchvision import models, transforms
 from torchvision.transforms.functional import crop
@@ -107,11 +107,11 @@ def load_image(url):
 # raw_images = [load_image(img) for img in images]
 # preds, probs = classify_images(raw_images, model_tuned)
 
-if __name__ == '__main__':
-    load_model('resnet50_14_20210607_2148.pt')
-    # with mlflow.start_run() as run: 
-    mlflow.set_tracking_uri("http://localhost:5000")
-    # mlflow.pytorch.save_model(model, 'classifier')
-    mlflow.pytorch.log_model(model, "model")
+# if __name__ == '__main__':
+#     load_model('resnet50_14_20210607_2148.pt')
+#     # with mlflow.start_run() as run: 
+#     mlflow.set_tracking_uri("http://localhost:5000")
+#     # mlflow.pytorch.save_model(model, 'classifier')
+#     mlflow.pytorch.log_model(model, "model")
         
         
