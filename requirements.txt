@@ -40,7 +40,7 @@ tabulate==0.8.9
 torch==1.9.0
 torchvision==0.10.0
 typing-extensions==3.10.0.0
-urllib3==1.26.7
+urllib3==1.25.0
 websocket-client==1.2.1
 Werkzeug==2.0.2
 zipp==3.6.0
