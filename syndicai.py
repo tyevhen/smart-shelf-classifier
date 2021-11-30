@@ -28,7 +28,7 @@ class PythonPredictor:
 
     def predict(self, payload):
         """ Run a model based on url input. """
-
+        print(payload)
         img = classification.load_image(payload["url"])
         preds, probs = self.classify_image(img)
 
