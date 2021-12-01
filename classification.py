@@ -91,7 +91,7 @@ def load_model(path):
     model.class_to_idx = checkpoint['class_to_idx']
     model.idx_to_class = checkpoint['idx_to_class']
     model.epochs = checkpoint['epochs']
-    
+    return model
     
 
 def transform_reshape_image(img):
