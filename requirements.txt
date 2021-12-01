@@ -17,7 +17,6 @@ itsdangerous==2.0.1
 Jinja2==3.0.3
 Mako==1.1.6
 MarkupSafe==2.0.1
-# mlflow==1.21.0
 numpy==1.19.5
 packaging==21.3
 pandas==1.1.5
@@ -40,7 +39,7 @@ tabulate==0.8.9
 torch==1.9.0
 torchvision==0.10.0
 typing-extensions==3.10.0.0
-urllib3==1.25.0
+urllib3==1.26.7
 websocket-client==1.2.1
 Werkzeug==2.0.2
 zipp==3.6.0
