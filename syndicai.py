@@ -10,14 +10,15 @@ class PythonPredictor:
         """ Download pretrained model. """
         self.model = classification.load_model('resnet50_14_20210607_2148.pt')
 
-    def classify_image(self, image):
+    def classify_images(self, images):
         """
-        :param image: (tensor): image tensor of shape (nof_images, channels, w, h)
+        :param images: (tensor): image tensor of shape (nof_images, channels, w, h)
         :return: preds, probs
         """
+        images = classification.images_to_tensor([classification.transform_reshape_image(x) for x in images])
         with torch.no_grad():
             self.model.eval()
-            out = self.model(image)
+            out = self.model(images)
             ps = torch.exp(out)
             top_preds, top_classes = ps.topk(1, dim=1)
             preds = [
@@ -32,5 +33,5 @@ class PythonPredictor:
         img = classification.load_image(payload["url"])
         preds, probs = self.classify_images([img])
 
-        return json.dumps({"preds": preds, "probs": probs})
+        return json.dumps({"preds": str(preds), "probs": str(probs)})
 
