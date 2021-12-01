@@ -30,7 +30,7 @@ class PythonPredictor:
         """ Run a model based on url input. """
         print(payload)
         img = classification.load_image(payload["url"])
-        preds, probs = self.classify_image(img)
+        preds, probs = self.classify_images([img])
 
         return json.dumps({"preds": preds, "probs": probs})
 
